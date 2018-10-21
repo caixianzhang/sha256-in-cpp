@@ -39,8 +39,16 @@ class CSHA256
 		//构造函数
 	    CSHA256();
 		
-		//数据进行sha256运算
+		/*
+			数据进行sha256运算
+			data：数据起始地址
+			len:要进行哈希的数据长度
+		*/
 	    CSHA256& Write(const unsigned char *data, size_t len);
+		/*
+			hash:值结果参数，将本次哈希运算得到的256bit结果
+			填入指定的内存区域。
+		*/
 	    void Finalize(unsigned char hash[OUTPUT_SIZE]);
 	    CSHA256& Reset();
 };
